@@ -38,11 +38,9 @@ This app fetches and displays employee data with features like caching and error
 - **Error Handling**:
   - Network error management
   - Image loading fallbacks
-  - Empty state handling
 
-## Need Help? 🤝
+## Screenshots
 
-Feel free to open an issue or submit a pull request!
+![Screenshot_1737182088](https://github.com/user-attachments/assets/7d3bc58e-8335-4c59-84ed-707de0a5741e)
+![Screenshot_1737182083](https://github.com/user-attachments/assets/9e5b7035-d56f-481f-ab6a-912f5ae6507f)
 
----
-Made with ❤️ using Flutter
