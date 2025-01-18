@@ -9,10 +9,6 @@ class UserService {
     try {
       final response = await http.get(url);
 
-      // Print the status code and response body for debugging
-      print('Status Code: ${response.statusCode}');
-      print('Response Body: ${response.body}');
-
       // Check if the request was successful
       if (response.statusCode == 200) {
         // Decode the JSON response into a List
