@@ -28,6 +28,11 @@ This app fetches and displays employee data including their names, emails, profi
 
 ## Screenshots
 
-![Screenshot_1737182088](https://github.com/user-attachments/assets/7d3bc58e-8335-4c59-84ed-707de0a5741e)
+![Screenshot_1737182083](https://github.com/user-attachments/assets/9e5b7035-d56f-481f-ab6a-912f5ae6507f)
+
+
+
+
+
 
 
