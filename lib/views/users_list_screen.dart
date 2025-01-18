@@ -1,3 +1,4 @@
+import 'package:employee_data/views/user_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:employee_data/model/user.dart';
 import 'package:employee_data/services/user_service.dart';
@@ -55,30 +56,40 @@ class _UserScreenState extends State<UserScreen> {
             itemCount: users.length,
             itemBuilder: (context, index) {
               final user = users[index];
-              return ListTile(
-                title: Text("${user.firstName} ${user.lastName}"),
-                subtitle: Text(user.email ?? 'No email'),
-                leading: ClipOval(
-                  child: Image.network(
-                    user.imageUrl ?? 'https://via.placeholder.com/150',
-                    width: 50,
-                    height: 50,
-                    fit: BoxFit.cover,
-                    // Show a loading indicator while the image is loading
-                    loadingBuilder: (context, child, loadingProgress){
-                      if (loadingProgress == null) {
-                        return child;
-                      } else {
-                        return const CircularProgressIndicator();
-                      }
-                    },
-                    // Handle image loading errors
-                    errorBuilder: (context, error, stackTrace) {
-                      return const Icon(Icons.person, size: 50);
-                    },
+              return InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => UserDetailsScreen(user: user),
+                    ),
+                  );
+                },
+                child: ListTile(
+                  title: Text("${user.firstName} ${user.lastName}"),
+                  subtitle: Text(user.email ?? 'No email'),
+                  leading: ClipOval(
+                    child: Image.network(
+                      user.imageUrl ?? 'https://via.placeholder.com/150',
+                      width: 50,
+                      height: 50,
+                      fit: BoxFit.cover,
+                      // Show a loading indicator while the image is loading
+                      loadingBuilder: (context, child, loadingProgress) {
+                        if (loadingProgress == null) {
+                          return child;
+                        } else {
+                          return const CircularProgressIndicator();
+                        }
+                      },
+                      // Handle image loading errors
+                      errorBuilder: (context, error, stackTrace) {
+                        return const Icon(Icons.person, size: 50);
+                      },
+                    ),
                   ),
+                  trailing: Text("\$${user.salary ?? 'N/A'}"),
                 ),
-                trailing: Text("\$${user.salary ?? 'N/A'}"),
               );
             },
           );
